@@ -10,11 +10,17 @@
 
 @import "tailwindcss";
 
-@layer base {
-  body {
-    font-family: 'Inter', sans-serif;
-    background-color: #f3fdf8; /* Muted pastel background */
-    color: #0f172a;
-    overflow-x: hidden;
-  }
+@theme {
+  --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+:root {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+body {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  background-color: #f3fdf8;
+  color: #0f172a;
+  overflow-x: hidden;
 }
