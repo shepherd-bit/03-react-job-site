@@ -152,7 +152,7 @@ export default function Hero() {
           </p>
         </div>
 
-        {/* Right Column: Graphic with Overlapping Top & Tucked Bottom */}
+        {/* Right Column: Graphic with Overlapping Top & Curved Tucked Bottom */}
         <div className="lg:col-span-5 relative flex justify-center items-center h-[520px]">
           {/* Top Left Floating Small Circle */}
           <div
@@ -160,23 +160,22 @@ export default function Hero() {
             className="absolute w-20 h-20 sm:w-24 sm:h-24 bg-[#9DA3FC]/50 rounded-full top-6 left-2 z-0"
           />
 
-          {/* Wrapper with Clip Path: allows top overflow, clips bottom */}
-          <div
-            className="hero-image-container relative w-[340px] sm:w-[420px] h-[460px] flex items-end justify-center"
-            style={{ clipPath: 'inset(-120px -60px 0px -60px)' }}
-          >
+          {/* Wrapper with Curved Bottom Mask */}
+          <div className="hero-image-container relative w-[340px] sm:w-[420px] h-[460px] flex items-end justify-center">
             {/* Background Circle */}
             <div
               ref={circleRef}
               className="absolute bottom-0 w-[340px] h-[340px] sm:w-[400px] sm:h-[400px] bg-[#9DA3FC]/40 rounded-full z-0"
             />
 
-            {/* Person Image: Larger size popping out at top */}
-            <img
-              src="/hero.png"
-              alt="Job Seeker"
-              className="relative z-10 h-[125%] sm:h-[130%] w-auto max-w-none object-contain pointer-events-none drop-shadow-xl"
-            />
+            {/* Person Image: Clipped at bottom with curved edge matching circle */}
+            <div className="relative z-10 h-[125%] sm:h-[130%] overflow-hidden rounded-b-full flex items-end">
+              <img
+                src="/hero.png"
+                alt="Job Seeker"
+                className="h-full w-auto max-w-none object-contain pointer-events-none drop-shadow-xl"
+              />
+            </div>
           </div>
 
           {/* Floating Badge 1 (Top Left) */}
