@@ -172,7 +172,7 @@ export default function Hero() {
             {/* Person Placeholder Illustration / Replace src with your image asset */}
             <div className="relative w-[300px] sm:w-[380px] h-[360px] sm:h-[440px] flex items-end justify-center">
               <img
-                src="public/hero.png"
+                src="./hero.png"
                 alt="Job Seeker"
                 className="w-full h-full object-cover object-top rounded-b-full drop-shadow-xl"
               />
