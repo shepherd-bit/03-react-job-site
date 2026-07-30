@@ -77,7 +77,7 @@ export default function Hero() {
 
       // Continuous Floating Animations
       gsap.to(circleRef.current, {
-        y: -15,
+        y: -12,
         duration: 3,
         repeat: -1,
         yoyo: true,
@@ -85,8 +85,8 @@ export default function Hero() {
       });
 
       gsap.to(smallCircleRef.current, {
-        y: 12,
-        x: -8,
+        y: 10,
+        x: -6,
         duration: 2.5,
         repeat: -1,
         yoyo: true,
@@ -102,7 +102,6 @@ export default function Hero() {
       className="relative bg-[#EBF7F2] min-h-[calc(100vh-80px)] flex items-center pt-8 pb-16 overflow-hidden"
     >
       <div className="max-w-7xl mx-auto px-6 w-full grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-        
         {/* Left Column: Text & Search Box */}
         <div className="lg:col-span-7 space-y-6 z-10">
           <div className="hero-badge inline-flex items-center gap-2 bg-white/80 backdrop-blur-sm px-3.5 py-1.5 rounded-full text-xs font-semibold text-[#5057D7] border border-emerald-100 shadow-sm">
@@ -148,62 +147,60 @@ export default function Hero() {
 
           {/* Popular Tag suggestions */}
           <p className="hero-tags text-xs text-slate-500 pt-1">
-            <span className="font-semibold text-slate-600">Try:</span> Product Designer, Software Engineer, Data Analyst
+            <span className="font-semibold text-slate-600">Try:</span> Product
+            Designer, Software Engineer, Data Analyst
           </p>
         </div>
 
-        {/* Right Column: Hero Graphic */}
-        <div className="lg:col-span-5 relative flex justify-center items-center">
-          
-          {/* Main Background Purple Circle */}
-          <div
-            ref={circleRef}
-            className="absolute w-[320px] h-[320px] sm:w-[420px] sm:h-[420px] bg-[#9DA3FC]/30 rounded-full top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
-          />
-
-          {/* Secondary Floating Circle */}
+        {/* Right Column: Graphic with Overlapping Top & Tucked Bottom */}
+        <div className="lg:col-span-5 relative flex justify-center items-center h-[520px]">
+          {/* Top Left Floating Small Circle */}
           <div
             ref={smallCircleRef}
-            className="absolute w-24 h-24 bg-[#9DA3FC]/40 rounded-full -top-4 right-8"
+            className="absolute w-20 h-20 sm:w-24 sm:h-24 bg-[#9DA3FC]/50 rounded-full top-6 left-2 z-0"
           />
 
-          {/* Image Container with SVG Placeholder Mask */}
-          <div className="hero-image-container relative z-10">
-            {/* Person Placeholder Illustration / Replace src with your image asset */}
-            <div className="relative w-[300px] sm:w-[380px] h-[360px] sm:h-[440px] flex items-end justify-center">
-              <img
-                src="./hero.png"
-                alt="Job Seeker"
-                className="w-full h-full object-cover object-top rounded-b-full drop-shadow-xl"
-              />
-            </div>
+          {/* Wrapper with Clip Path: allows top overflow, clips bottom */}
+          <div
+            className="hero-image-container relative w-[340px] sm:w-[420px] h-[460px] flex items-end justify-center"
+            style={{ clipPath: 'inset(-120px -60px 0px -60px)' }}
+          >
+            {/* Background Circle */}
+            <div
+              ref={circleRef}
+              className="absolute bottom-0 w-[340px] h-[340px] sm:w-[400px] sm:h-[400px] bg-[#9DA3FC]/40 rounded-full z-0"
+            />
 
-            {/* Floating Interactive Badge 1 */}
-            <div className="floating-badge absolute top-12 -left-6 bg-white/90 backdrop-blur-md p-3.5 rounded-2xl shadow-xl border border-slate-100 flex items-center gap-3">
-              <div className="w-10 h-10 rounded-xl bg-indigo-50 flex items-center justify-center text-[#5057D7]">
-                <FiBriefcase className="text-xl" />
-              </div>
-              <div>
-                <p className="text-xs text-slate-500 font-medium">Active Jobs</p>
-                <p className="text-sm font-bold text-slate-800">12,450+</p>
-              </div>
-            </div>
-
-            {/* Floating Interactive Badge 2 */}
-            <div className="floating-badge absolute bottom-8 -right-4 bg-white/90 backdrop-blur-md p-3.5 rounded-2xl shadow-xl border border-slate-100 flex items-center gap-3">
-              <div className="w-10 h-10 rounded-xl bg-emerald-50 flex items-center justify-center text-emerald-600">
-                <FiUsers className="text-xl" />
-              </div>
-              <div>
-                <p className="text-xs text-slate-500 font-medium">Companies</p>
-                <p className="text-sm font-bold text-slate-800">800+ Hiring</p>
-              </div>
-            </div>
-
+            {/* Person Image: Larger size popping out at top */}
+            <img
+              src="/hero.png"
+              alt="Job Seeker"
+              className="relative z-10 h-[125%] sm:h-[130%] w-auto max-w-none object-contain pointer-events-none drop-shadow-xl"
+            />
           </div>
 
-        </div>
+          {/* Floating Badge 1 (Top Left) */}
+          <div className="floating-badge absolute top-[18%] left-[-15px] sm:left-[-25px] bg-white/90 backdrop-blur-md p-3.5 rounded-2xl shadow-xl border border-slate-100 flex items-center gap-3 z-30">
+            <div className="w-10 h-10 rounded-xl bg-indigo-50 flex items-center justify-center text-[#5057D7]">
+              <FiBriefcase className="text-xl" />
+            </div>
+            <div>
+              <p className="text-xs text-slate-500 font-medium">Active Jobs</p>
+              <p className="text-sm font-bold text-slate-800">12,450+</p>
+            </div>
+          </div>
 
+          {/* Floating Badge 2 (Bottom Right) */}
+          <div className="floating-badge absolute bottom-[10%] right-[-10px] sm:right-[-20px] bg-white/90 backdrop-blur-md p-3.5 rounded-2xl shadow-xl border border-slate-100 flex items-center gap-3 z-30">
+            <div className="w-10 h-10 rounded-xl bg-emerald-50 flex items-center justify-center text-emerald-600">
+              <FiUsers className="text-xl" />
+            </div>
+            <div>
+              <p className="text-xs text-slate-500 font-medium">Companies</p>
+              <p className="text-sm font-bold text-slate-800">800+ Hiring</p>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
   );
