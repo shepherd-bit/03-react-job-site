@@ -171,7 +171,7 @@ export default function Hero() {
             {/* Person Image: Clipped at bottom with curved edge matching circle */}
             <div className="relative z-10 h-[125%] sm:h-[130%] overflow-hidden rounded-b-full flex items-end">
               <img
-                src="/hero.png"
+                src="./hero.png"
                 alt="Job Seeker"
                 className="h-full w-auto max-w-none object-contain pointer-events-none drop-shadow-xl"
               />
