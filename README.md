@@ -1,6 +1,6 @@
 # Jobify
 
-![Jobify Preview](./preview.PNG)
+![Jobify Preview](./public/preview.PNG)
 
 Jobify is a modern, responsive job portal web application designed to connect talented professionals with world-class opportunities. It features intuitive job search tools, curated career insights, and a seamless interface tailored for career growth.
 
