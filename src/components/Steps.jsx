@@ -102,7 +102,7 @@ export default function Steps() {
               {/* Main Image Container */}
               <div className="relative rounded-3xl overflow-hidden shadow-2xl border border-slate-100 bg-slate-900 group">
                 <img
-                  src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=1000&auto=format&fit=crop"
+                  src="./job-search.jpg"
                   alt="Candidate applying for jobs"
                   className="w-full h-[420px] sm:h-[480px] object-cover object-center group-hover:scale-105 transition-transform duration-700"
                 />
