@@ -1,16 +1,55 @@
-# React + Vite
+# Jobify
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+![Jobify Preview](preview.PNG)
 
-Currently, two official plugins are available:
+Jobify is a modern, responsive job portal web application designed to connect talented professionals with world-class opportunities. It features intuitive job search tools, curated career insights, and a seamless interface tailored for career growth.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+🔗 [View Live Link](https://shepherd-bit.github.io/03-react-job-site/)
 
-## React Compiler
+---
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Key Features
 
-## Expanding the ESLint configuration
+* **Interactive Hero & Search Section:** Quick job discovery with dynamic search suggestions and category filters.
+* **Partner Brand Showcase:** Full-color partner logo grid highlighting leading companies hiring on the platform.
+* **Featured Career Insights:** Fast, CSS-rendered related news grid with category badges, author bios, and read-time estimates.
+* **Newsletter Subscription:** High-converting updates section complete with instant subscription feedback and privacy assurances.
+* **Responsive Layout:** Tailored design for seamless usability across desktop, tablet, and mobile displays.
+* **Dark-Themed Footer:** Professional footer with quick navigation links and custom white-themed social media integration.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+
+## Tech Stack
+
+* **Frontend Framework:** React (Vite)
+* **Styling:** Tailwind CSS
+* **Icons:** React Icons (`react-icons/fi`)
+* **Deployment:** GitHub Pages & GitHub Actions
+
+---
+
+## Project Structure
+
+```text
+03-react-job-site/
+├── .github/
+│   └── workflows/
+│       └── deploy.yml          # GitHub Actions deployment workflow
+├── public/
+│   ├── icons/                  # Social media and brand assets
+│   └── preview.PNG             # Repository preview image
+├── src/
+│   ├── assets/                 # Dynamic imagery and media files
+│   ├── components/
+│   │   ├── Navbar.jsx          # Header navigation bar
+│   │   ├── Hero.jsx            # Hero banner & search UI
+│   │   ├── Partners.jsx        # Colored partner logo carousel/grid
+│   │   ├── RelatedNews.jsx     # Career news grid component
+│   │   ├── Newsletter.jsx      # Email subscription banner
+│   │   └── Footer.jsx          # Dark themed footer with social links
+│   ├── App.jsx                 # Primary app entry layout
+│   ├── index.css               # Global styles & Tailwind directives
+│   └── main.jsx                # React DOM render entry point
+├── index.html                  # Root HTML document
+├── package.json                # Project dependencies and build scripts
+└── vite.config.js              # Vite configuration & base deployment path
