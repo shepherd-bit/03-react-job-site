@@ -100,15 +100,6 @@ export default function Partners() {
     { scope: containerRef, dependencies: [filteredPartners] }
   );
 
-  // Handle Pause / Resume on Hover
-  const handleMouseEnter = () => {
-    if (tweenRef.current) tweenRef.current.pause();
-  };
-
-  const handleMouseLeave = () => {
-    if (tweenRef.current) tweenRef.current.play();
-  };
-
   return (
     <section
       ref={containerRef}
@@ -153,8 +144,7 @@ export default function Partners() {
       {/* Infinite Logo Marquee Wrapper */}
       <div
         className="partners-marquee-wrapper relative w-full overflow-hidden [mask-image:_linear-gradient(to_right,_transparent_0,_black_10%,_black_90%,_transparent_100%)] py-4"
-        onMouseEnter={handleMouseEnter}
-        onMouseLeave={handleMouseLeave}
+
       >
         <div
           ref={marqueeRef}
